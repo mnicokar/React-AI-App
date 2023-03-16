@@ -29,12 +29,12 @@ export const arrayItems = [
     {
         name: "Code Completion",
         id: "Generate,edit, and explain code",
-        description: "Bot that helps you generate, edit, and explain code",
+        description: "Bot that helps you generate code. Use comments to give it commands. E.X. \#ask the user for their name.",
         option:{
             model: "code-cushman-001",
             prompt: "",
             temperature: 0,
-            max_tokens: 1000,
+            max_tokens: 60,
             frequency_penalty: 0.0,
             presence_penalty: 0.0,
           }
@@ -79,5 +79,19 @@ export const arrayItems = [
                 frequency_penalty: 0.0,
                 presence_penalty: 0.0,
             },
-    }
+    },
+    {
+        name: "turbo",
+        id: "chat",
+        description: "3.5 turbo",
+        option:
+            {
+                model:"gpt-3.5-turbo",
+                messages: [
+                    {"role": "system", "content": "You are a software engineer at microsoft azure"},
+                    {"role": "user", "content": ""}
+                ]
+
+            },
+    },
 ]

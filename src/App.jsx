@@ -23,34 +23,32 @@ function App() {
 
   const doMagic = async() => {
     console.log(option);
-    /*
-    if (option["model"] == 'code-davinci-002'){
-      option["prompt"] += '"""' +input +'"""';
+  
+
+    if ( option["model"] === 'gpt-3.5-turbo'){
+      option["messages"][1]["content"] = input;
+      const response = await openai.createChatCompletion(option);
+      console.log(response.data.choices[0].message);
     }
     else{
-      option["prompt"] += input;
+      if (option["model"] === 'code-davinci-002'){
+        option["prompt"] += '"""' +input +'"""';
+      }
+      else{
+        option["prompt"] += input;
+      }
+      const response = await openai.createCompletion(option);
+      console.log(response.data.choices[0].text)
     }
-    */
 
-    option["prompt"] += input;
-    
-    /*
-    let object = {model:"text-davinci-003",
-    prompt: "What color is grass?",
-    temperature:0.0,
-    max_tokens:100,
-    
-    frequency_penalty:0.0,
-    presence_penalty:0.0,
-    }
-    */
+   
 
     
-    //console.log(object);
-    const response = await openai.createCompletion(option);
-
-    console.log(response.data.choices);
-    setResult(response.data.choices[0].text)
+    //For Turbo
+    
+    
+    //For everything else atm
+    //setResult(response.data.choices[0].text)
   }
       
 
