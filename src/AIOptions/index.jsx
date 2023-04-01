@@ -34,7 +34,7 @@ export const arrayItems = [
             model: "code-cushman-001",
             prompt: "",
             temperature: 0,
-            max_tokens: 60,
+            max_tokens: 1080,
             frequency_penalty: 0.0,
             presence_penalty: 0.0,
           }
@@ -88,7 +88,7 @@ export const arrayItems = [
             {
                 model:"gpt-3.5-turbo",
                 messages: [
-                    {"role": "system", "content": "You are a software engineer at microsoft azure"},
+                    {"role": "system", "content": "You are a professional software developer"},
                     {"role": "user", "content": ""}
                 ]
 
