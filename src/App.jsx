@@ -22,7 +22,7 @@ function App() {
   }
 
   const doMagic = async() => {
-    console.log(option);
+    
   
 
     if ( option["model"] === 'gpt-3.5-turbo'){
@@ -37,6 +37,7 @@ function App() {
       else{
         option["prompt"] += input;
       }
+      console.log(option);
       const response = await openai.createCompletion(option);
       console.log(response.data.choices[0].text)
     }
